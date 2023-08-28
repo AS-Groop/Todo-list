@@ -38,7 +38,7 @@ export const useAuthStore = defineStore('auth', {
         const uid = this.getUid()
         const db = getDatabase();
         await set(dRef(db, `/users/${uid}/info`), {
-          username: user.username,
+          username: user.username || 'User',
           email: user.email,
         });
       } catch (e) {
